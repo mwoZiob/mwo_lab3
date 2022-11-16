@@ -49,7 +49,7 @@ jobs:
       - name: upload artifact
         uses: actions/upload-artifact@v3.1.0
         with:
-          name: personsApi-artifact
+          name: mwo-artifact
           path: ${{ env.DOTNET_ROOT }}/api
     
   deploy-dev:
@@ -62,7 +62,7 @@ jobs:
       - name: Download a Build Artifact
         uses: actions/download-artifact@v3.0.0
         with:
-          name: DEVmwo-artifact
+          name: mwo-artifact
       - name: Azure WebApp
         id: deploy-to-azure
         uses: Azure/webapps-deploy@v2
@@ -80,7 +80,7 @@ jobs:
       - name: Download a Build Artifact
         uses: actions/download-artifact@v3.0.0
         with:
-          name: PRODmwo-artifact
+          name: mwo-artifact
       - name: Azure WebApp
         id: deploy-to-azure
         uses: Azure/webapps-deploy@v2
