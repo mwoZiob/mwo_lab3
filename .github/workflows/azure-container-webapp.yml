@@ -41,7 +41,7 @@ jobs:
         with:
           dotnet-version: 6.0.100
       - name: Restore dependences
-        run: dotnet restore
+        run: dotnet restore ./mwo4
       - name: Build
         run: dotnet build --no-restore
       - name: Publish
