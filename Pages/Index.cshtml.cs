@@ -12,7 +12,8 @@ namespace mwo4.Pages
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
-            string path = "../../../version.txt";
+            //string path = "../../../version.txt";
+            string path = "../version.txt";
             if(System.IO.File.Exists(path))
             {
                 ver = System.IO.File.ReadAllText(path);
