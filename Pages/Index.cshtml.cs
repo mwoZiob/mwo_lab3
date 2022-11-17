@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.IO;
 
 namespace mwo4.Pages
 {
@@ -13,10 +12,10 @@ namespace mwo4.Pages
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
-            string path = "../version.txt";
-            if(File.Exists(path))
+            string path = "../../../version.txt";
+            if(System.IO.File.Exists(path))
             {
-                ver = File.ReadAllText(path);
+                ver = System.IO.File.ReadAllText(path);
             }
             else
             {
