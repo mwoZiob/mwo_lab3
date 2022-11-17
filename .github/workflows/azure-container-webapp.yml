@@ -36,20 +36,20 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Run python script
-        run: python ./Pages//change_version.py
-      - name: set email
-        run: git config --global user.email "michalziober08@gmail.com"
-      - name: set name
-        run: git config --global user.name "Michał Ziober"
-      - name: stage changed file
-        run: git add -u
-      - name: commit changed file
-        run: git commit -m "Increment version"
-      - name: fetch from master
-        run: git fetch origin master
-      - name: push code to master
-        run: git push origin HEAD:master
+#       - name: Run python script
+#         run: python ./Pages//change_version.py
+#       - name: set email
+#         run: git config --global user.email "michalziober08@gmail.com"
+#       - name: set name
+#         run: git config --global user.name "Michał Ziober"
+#       - name: stage changed file
+#         run: git add -u
+#       - name: commit changed file
+#         run: git commit -m "Increment version"
+#       - name: fetch from master
+#         run: git fetch origin master
+#       - name: push code to master
+#         run: git push origin HEAD:master
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v2.1.0
         with:
@@ -60,6 +60,9 @@ jobs:
         run: dotnet build --no-restore
       - name: Publish
         run: dotnet publish mwo4.csproj -c Release -o ${{ env.DOTNET_ROOT }}/api
+      - name: Create version
+        run: |
+              echo ${{ github.run_number }} > ${{env.DOTNET_ROOT }}/api/version.txt
       - name: ls
         run: tree ${{ env.DOTNET_ROOT }}/api
       - name: upload artifact
