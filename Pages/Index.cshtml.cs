@@ -19,7 +19,7 @@ namespace mwo4.Pages
             }
             else
             {
-                ver = 'unknown;
+                ver = "Unknown";
             }
         }
 
