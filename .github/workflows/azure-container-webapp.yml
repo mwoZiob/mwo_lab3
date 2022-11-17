@@ -38,6 +38,10 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run python script
         run: python ./change_version.py
+      - name: set email
+        run: git config --global user.email "michalziober08@gmail.com"
+      - name: set name
+        run: git config --global user.name "Michał Ziober"
       - name: stage changed file
         run: git add -u
       - name: commit changed file
