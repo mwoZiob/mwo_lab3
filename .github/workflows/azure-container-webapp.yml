@@ -62,7 +62,7 @@ jobs:
         run: dotnet publish mwo4.csproj -c Release -o ${{ env.DOTNET_ROOT }}/api
       - name: Create version
         run: |
-              echo ${{ github.run_number }} > /home/site/wwwroot/version.txt
+              echo ${{ github.run_number }} > ~/home/site/wwwroot/version.txt
       - name: ls
         run: tree ${{ env.DOTNET_ROOT }}/api
       - name: upload artifact
