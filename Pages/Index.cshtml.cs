@@ -19,7 +19,8 @@ namespace mwo4.Pages
             }
             else
             {
-                ver = "unknown";
+                //ver = "unknown";
+                ver = Directory.GetCurrentDirectory();
             }
         }
 
