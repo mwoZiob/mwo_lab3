@@ -36,6 +36,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - name: Run python script
+        run: python ./change_version.py
+      - name: stage changed file
+        run: git add -u
+      - name: commit changed file
+        run: git commit -m "Increment version"
+      - name: fetch from master
+        run: git fetch origin master
+      - name: push code to master
+        run: git push origin HEAD:master
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v2.1.0
         with:
