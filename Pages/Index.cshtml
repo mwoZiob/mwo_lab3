@@ -2,12 +2,11 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
-    var version = Server.MapPath("../version.txt");
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>MWO app, deployment to azure web app test</p>
     Wersja aplikacji:
-    <p>@version</p>
+    <p>@Html.Raw(File.ReadAllText("../version.txt"))</p>
 </div>
