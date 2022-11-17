@@ -13,7 +13,7 @@ namespace mwo4.Pages
         {
             _logger = logger;
             //string path = "../../../version.txt";
-            string path = "../version.txt";
+            string path = "../Pages/version.txt";
             if(System.IO.File.Exists(path))
             {
                 ver = System.IO.File.ReadAllText(path);
