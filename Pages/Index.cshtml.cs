@@ -13,15 +13,14 @@ namespace mwo4.Pages
         {
             _logger = logger;
             //string path = "../../../version.txt";
-            string path = "../Pages/version.txt";
+            string path = "./api/version.txt";
             if(System.IO.File.Exists(path))
             {
                 ver = System.IO.File.ReadAllText(path);
             }
             else
             {
-                //ver = "unknown";
-                ver = Directory.GetCurrentDirectory();
+                ver = "n";
             }
         }
 
