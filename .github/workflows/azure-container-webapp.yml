@@ -61,7 +61,7 @@ jobs:
       - name: Publish
         run: dotnet publish mwo4.csproj -c Release -o ${{ env.DOTNET_ROOT }}/api
       - name: ls
-        run: tree ${{ env.DOTNET_ROOT }}/api
+        run: tree ${{ env.DOTNET_ROOT }}
       - name: upload artifact
         uses: actions/upload-artifact@v3.1.0
         with:
